@@ -11,3 +11,7 @@ echo "Current working directory: $PWD"
 echo "Home directory of current user: $HOME"
 
 echo "PID of the Script executing now: $$"
+
+sleep 100 &
+
+echo "PID of last backround command: $!"
