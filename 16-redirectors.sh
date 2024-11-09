@@ -19,6 +19,7 @@ then
     exit 1
 fi    
 }
+
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
@@ -33,6 +34,8 @@ USAGE(){
     echo -e "$R USAGE:: $N sudo sh 16-redirectors.sh package1 package2 ...."
     exit 1
 }
+
+echo "Script Strated executing at: $(date)"
 
 CHECK_ROOT
 
