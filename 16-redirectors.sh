@@ -35,7 +35,7 @@ USAGE(){
     exit 1
 }
 
-echo "Script Strated executing at: $(date)"
+echo "Script Strated executing at: $(date)" &>>$LOG_FILE
 
 CHECK_ROOT
 
