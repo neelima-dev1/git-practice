@@ -9,7 +9,7 @@ while IFS= read -r line #IFS is called internal field separator, empty it will n
 do
     USAGE=$(echo $line | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1)
     PARTITION=$(echo $line | grep xfs | awk -F " " '{print $NF}')
-    if [ $USAGE -ge $DISK_THRESOLD ]
+    if [ $USAGE -ge $DISK_THRESHOLD ]
     then
         echo "$PARTITION is more than $DISK_THRESHOLD, current value: $USAGE. Please check"
     fi
