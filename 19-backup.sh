@@ -34,7 +34,7 @@ then
 fi
 
 
-FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +14) | zip "$ZIP_FILE" -@
+FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +14) 
 
 echo "Files: $FILES"
 
