@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DISK_USAGE=$(df -hT |grep xfs)
+DISK_USAGE=$(df -hT | grep xfs)
 DISK_THRESOLD=5 #Real projects, it is usally 75
 
 
