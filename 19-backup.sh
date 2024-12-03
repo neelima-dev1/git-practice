@@ -34,7 +34,7 @@ then
 fi
 
 
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
+FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +14) |zip "$ZIP_FILE" -@
 
 echo "Files: $FILES"
 
@@ -42,7 +42,8 @@ if [ ! -z $FILES ] #true if FILES are empty, ! makes it expression false
 then
     echo "Files are found"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
-    find $SOURCE_DIR -name "*.log" -mtime +14 |zip "$ZIP_FILE" -@
+    find ${SOURCE_DIR} -name "*.log" -mtime +14 |zip "$ZIP_FILE" -@
+    
     #CHECK IF zip file is sucessfully created or not
     if [ -f $ZIP_FILE ]
     then
