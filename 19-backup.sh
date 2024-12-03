@@ -44,18 +44,17 @@ then
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     find ${SOURCE_DIR} -name "*.log" -mtime +14 |zip "$ZIP_FILE" -@
     
-    #CHECK IF zip file is sucessfully created or not
+    #CHECK if zip file is sucessfully created or not
     if [ -f $ZIP_FILE ]
     then
         echo "Sucessfully zipped files older than $DAYS"
 
         #remove the files after zipping
-        
-         while IFS= read -r file #IFS is called internal field separator, empty it will not ignore while space. -r is for not to ignore special characters like /
-         do
-             echo "Deleting file: $file"
-             rm -rf $file
-         done <<< $FILES
+        while IFS= read -r file #IFS is called internal field separator, empty it will not ignore while space. -r is for not to ignore special characters like /
+        do
+            echo "Deleting file: $file"
+            rm -rf $file
+        done <<< $FILES
 
     else 
         echo "Zipping the files is failed"
